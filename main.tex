@@ -4,6 +4,34 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{xcolor}
 
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{example}[theorem]{Example}
+
+
+\newtheoremstyle{expl}%
+{0ex}% Space above
+{0ex}% Space below
+{}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{expl}
+
 \begin{document}
 	\title{\large{Comprehensive Exam}}
 	\date{}
@@ -11,19 +39,53 @@
 	\maketitle
 	\tableofcontents
 	
-\section{Personal Background?}
+\section{Personal Background}
+\noindent Basically Copy.
 \section{Introduction}
-\subsection{Definition and Notations.?depends} Throughout we work over the field of complex numbers $\mathbb{C}$. \\
-\textcolor{red}{Q.1 Fano varieties/ 3-folds: if former then discuss dim 1,2 situation(necessary?), if latter just discuss 3-folds examples}
-A nonsingular projective variety $X$ is called a \textit{Fano Variety} if the anticanonical divisor $-K_X$ is ample. In this paper/article, we aim to understand/see the classification of Fano 3-folds. \\
-
-	The following definitions and properties are from \textcolor{cyan}{Isko-1}. For any Cartier divisor $D$ on a variety $X$, $\mathcal{O}_X(D)$ wll denote the corresponding invertible sheaf, and, in particular, $\mathcal{O}_X(-K_X)$ is the canonical sheaf on $X$ where $-K_X$ is the canonical divisor of $X$. \\
+\textcolor{olive}{Notations, definition(index, $\rho$, degree, etc., extremal rays and stuff?), basic examples, goal(s), other preliminaries about invariants, definitions, etc., potential research?}
+\subsection{Definition and Examples.} Throughout we work over the field of complex numbers $\mathbb{C}$.
+A nonsingular projective variety $X$ is called a \textit{Fano Variety} if the anticanonical divisor $-K_X$ is ample.
+For any Cartier divisor $D$ on a variety $X$, $\mathcal{O}_X(D)$ will denote the corresponding invertible sheaf, and, in particular, $\mathcal{O}_X(-K_X)$ is the canonical sheaf on $X$ where $-K_X$ is the canonical divisor of $X$. \\
 	\textcolor{red}{ Q.2 Complete linear system, $h^i(X)$, Proposition 1.3, build upto Prop 1.6 \& as a consequence genus, and the following para- NS(X) =Pic(X) has no torsion, $\rho=b_2$, fundamental divisor $H$, index. Then Def 1.13 for degree.}\\
+For any positive integer $n$,  $\mathbb{P}^n$ is a $n$-dimensional Fano variety since its anticanonical sheaf is $\mathcal{O}(n+1)$ which is ample by \textcolor{cyan}{Hart}. In fact $\mathbb{P}^1$ is the only 1-dimensional Fano variety. Fano varities of dimension $2$ are called \textit{del Pezzo surfaces} and their classification is given in \textcolor{cyan}{AG V}. Clearly, $\mathbb{P}^3$ is a $3$-dimensional Fano variety. + 1 more example of hypersurfaces.
+
+\noindent Fano varieites of dim $3$ with $\rho =1$ are called \textit{prime} Fano $3$-folds and they are completely classified by Iskovskikh in \textcolor{cyan}{Isko-1,2}. Fano $3$-folds with $\rho\geq 2$ were all classified by mori and mukai in \textcolor{cyan}{refer with timeline?}. \\
+In this paper(?), we aim to understand the classification of Fano $3$-folds. 
+
 	  
-	\textcolor{olive}{Notations, definition(index, $\rho$, degree, etc.), basic examples, goal(s), other preliminaries about invariants, definitions, etc., potential research?}
-	\section{Fano Threefolds with $\rho =1$}
-	\textcolor{olive}{ $V_d$ notation, etc that will be used in next section}
-	\section{Fano Threefolds with $\rho \geq 2$}
-	\textcolor{olive}{Follow goodnotes file: primitive and imprimitive classification separately, basically follow Mori and Mukai}\\ 
-	\textcolor{red}{Q. Tables refer or?}
+\section{Fano Threefolds with $\rho =1$}
+	\textcolor{olive}{ $V_d$ notation, etc that will be used in next section}\\
+	For the classification here, we follow \textcolor{cyan}{Isko-1,2}.
+\section{Fano Threefolds with $\rho \geq 2$}
+	\textcolor{olive}{outline from mm(1981). Some details from others yet to add because what I have now is just not sufficient.}\\ 
+	In this section, we consider Fano $3$-folds with $B_2 \geq 3$. The main result is 
+	\begin{theorem}
+	There are exactly $88$ types of Fano $3$-folds with $B_2 \geq 2$ up to deformations.
+	\end{theorem}
+	We begin with some definitions. 
+	\begin{definition}
+		A Fano $3$-fold is imprimitive if it is isomorphic to the blow-up of a Fano $3$-fold along a smooth irreducible curve. A Fano $3$-fold is primitive if it is not imprimitive.
+	\end{definition}
+    \begin{definition}
+    	A smooth variety over a smooth surface $S$ is a conic bundle if every geometic fibre of $X \to S$ is isomorphic to a conic, i.e., a scheme of zeroes of a non zero homogeneous form of degree $2$ on $\mathbb{P}^2$.
+    \end{definition}
+    \noindent The following theorem gives a complete classification for primitive Fano $3$-folds.
+    \begin{theorem}
+    	Let $X$ be a primitive Fano $3$-fold. Then we have 
+    	\begin{enumerate}
+    		\item $B_2 \leq 3$,
+		\item if $B_2 =2$, then $X$ is a conic bundle over $\mathbb{P}^2$, and
+    		\item if $B_2 =3$, then $X$ is a conic bundle over $\mathbb{P}^1 \times \mathbb{P}^1$ and has either a divisor $D \simeq \mathbb{P}^1 \times \mathbb{P}^1$ such that $\mathcal{O}_D(D) \simeq \mathcal{O}(-1,-1)$ or another conic bundle structure over $\mathbb{P}^1 \times \mathbb{P}^1$.
+    	\end{enumerate}
+    \end{theorem}
+        The following proposition gives a classification for Fano $3$-folds with $B_2 =2$. 
+    \begin{proposition}
+    	On a Fano $3$-fold $X$ with $B_2 =2$, there are two smooth rational curves $C_1$ and $C_2$ and two numerically effective divisors $H_1$ and $H_2$ such that $(C_i \cdot H_j)= \delta_{ij}$ for all $i,j=1,2$. 
+    \end{proposition}
+    \noindent Theorem and Proposition give a complete classification for Fano $3$-folds which are either primitive or have $B_2 =2$, including the imprimitive ones.  
+    This leaves us to consider the imprimitive Fano $3$-folds with $B_2 \geq 3$. 
+    It turns out they can be obtained from successive curve-blow-ups of primitive Fano $3$-folds by using their conic bundle structure or the existence of lines on Fano $3$-folds with $B_2=2$. In the latter case, there can be several possibilities for each of the extremal rays and each possibility leads to an imprimitive Fano $3$-fold with $B_2=2$. Combining all this information we get Table 2 in \textcolor{cyan}{refer tables}.\\
+    \noindent Since the blowing-up of a Fano $3$-fold raises $B_2$ by $1$(refer?), we obtain $B_2 \geq 3$ imprimitive Fano $3$-folds by the blowing-up of a Fano $3$-fold $Y$ along a smooth irreducible curve $C$. The following Propositions give strong necessary conditions on $C \subset Y$.
+    
 	\section{References}
+\end{document}
