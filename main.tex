@@ -6,7 +6,17 @@
 \usepackage{lineno}
 \linenumbers
 \usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={.},
+    pdfpagemode=FullScreen,
+    }
 
+\urlstyle{same}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
@@ -70,9 +80,9 @@ For any Cartier divisor $D$ on a variety $X$, $\mathcal{O}_X(D)$ will denote the
 	\]
     where $H$ is the hyperplane class of Pic $\mathbb{P}^n$. Then $-K_V$ is ample and so $V$ is a Fano variety.
     
- There are 105 deformation classes of Fano varieties of dimension $3$(or Fano $3$-folds). Fano $3$-folds with Picard rank $\rho =1$ are called \textit{prime} Fano $3$-folds and their classification was first completed by Iskovskikh using the birational method of double projection from a line in \cite{Isk77} and \cite{Isk78}. The classification was later reworked by S. Mukai in \cite{Muk89} using the biregular vector bundle method. So it turns out that there are 17 deformation classes of prime Fano $3$-folds. Fano $3$-folds with $\rho\geq 2$ were all classified by Mori and Mukai in \cite{MM81} and \cite{MM03}. More recently, De Biase, Fatighenti, and Tanturri have obtained a description of a general member of each deformation family of Fano $3$-folds as the zero locus of a homogeneous vector bundle in a product of Grassmannians and weighted projective spaces, \cite{Hove}.
+ There are 105 deformation classes of Fano varieties of dimension $3$(or Fano $3$-folds). Fano $3$-folds with Picard rank $\rho =1$ are called \textit{prime} Fano $3$-folds and their classification was first completed by Iskovskikh using the birational method of double projection from a line in \cite{Isk77} and \cite{Isk78}. The classification was later reworked by S. Mukai in \cite{Muk89} using the biregular vector bundle method. So it turns out that there are 17 deformation classes of prime Fano $3$-folds. Fano $3$-folds with $\rho\geq 2$ were all classified by Mori and Mukai in \cite{MM81} and \cite{MM03}. More recently, De Biase, Fatighenti, and Tanturri have obtained a similar description for non-prime Fano $3$-folds by embedding them into products of Grassmannians, \cite{Hove}.
  
-The subject of this report is Fano $3$-folds, we study their classical classification given by Iskovskikh, Mori, and Mukai. 
+My research intends to investigate group of automorphisms of Fano $3$-folds. In this report, I give an outline for the complete classification of Fano $3$-folds given by Iskovskikh, Mori, and Mukai(\S\S 3,4). In \S 5, we discuss some existing results on their automorphism groups. 
 
 \subsection{Notations} In this section, we establish the basic notations and results that will be important for the subsequent classification. 
 Let $X$ be a Fano $3$-fold. 
@@ -82,16 +92,21 @@ We also write $H^0(X,D)$ for the finite-dimensional vector space over $\mathbb{C
 The symbol $|\mathcal{L}|$ or $|D|$ will denote the complete linear system of effective divisors formed by the divisors of zeroes of sections in $H^0(X,\mathcal{L})$ and we write dim $|D|$ for dim$_{\mathbb{C}}(H^0(X,\mathcal{L})) -1$.
 For an arbitrary coherent sheaf $\mathcal{F}$ on $X$, we will write $h^i(X,\mathcal{F})$ for dim $H^i(X,\mathcal{F})$. 
 
-We consider all vector spaces over $\mathbb{C}$. For a $n$-dimensional vector space $V$, Gr$(s,n)$ denotes the space of $s$-dimensional subspaces of $V$, called the Grassmannian. \textcolor{red}{picard group, Self-intersection number, anticanonical embedding}
+We consider all vector spaces over $\mathbb{C}$. For a $n$-dimensional vector space $V$, Gr$(s,n)$ denotes the space of $s$-dimensional subspaces of $V$, called the Grassmannian. The Picard group of $X$, Pic $X$ is the group of isomorphism classes of invertible sheaves on $X$ under the operation $\otimes$. 
 
-\subsection{Plan} We begin our study of classification by defining and giving properties of invariants associated to a Fano $3$-fold $X$, viz., Picard rank, index, genus, and degree. The \textit{genus} $g$ of $X$ is the positive integer $(-K_X)^3/2 +1$. The Picard rank $\rho$ is discussed next, it is defined as the rank of the Picard group Pic $X$. The \textit{index} of $X$ is the greatest integer $r$ such that $-K_X = rH$ for some divisor $H$. It turns out that the index $r$ satisfies $1 \leq r \leq 4$, we show this in Proposition 2.8. The \textit{degree} $d$ of $X$ is defined as the self-intersection number of the fundamental divisor $H$ of $X$. In the case when $-K_X$ is very ample, there is an alternative description for $g$ and $d$, see Proposition 2.4 and Definition 2.9. 
+Let $H$ be a divisor on $X$. By $H^3$, we mean the self-intersection number of $H$. See \cite[1.2]{3264} for the definition of intersection number. 
+By an anticanonical embedding we will mean the embedding induced by the linear system $|-K_X|$ into a projective space.
+\medbreak 
+Given a Fano $3$-fold $X$, we label it by a pair of numbers $\rho$-$N$ where $\rho$ is the Picard rank of $X$ and $N$ is the number in the classification found in \cite{FanoV}. A most recent classification table for Fano $3$-folds along with some of their associated invariants and information about their birational geometry, zero section description, etc. can be found on \cite{Fano}.
 
-The classification of Fano $3$-folds with Picard rank $1$ is described in section $3$, owing to Iskovskikh and Mukai. In Theorem 3.1, we describe Fano $3$-folds with index $r=3$ and $4$. From Theorem 3.2, we see that Fano threefolds with index $r=2$ have degree $1\leq d \leq 7$, we give a description of them in Theorem 3.3 for each $d$. Through the works of Iskovskikh(\cite{Isk77}, \cite{Isk78}), we have that all Fano $3$-folds with index $r=1$ appear as hyperelliptic varieties, complete intersections or have genus $6 \leq g \leq 12$, $g\neq 11$ except one. We first give hyperelliptic Fano $3$-folds in Theorem 3.5. In Proposition $3.7$, we see that a Fano $3$-fold is a complete intersection in projective space exactly for $g=3,4$, and $5$. \textcolor{red}{*}Fano $3$-folds with $g=6$ is given as complete intersection in a Grassmannian, in example 3.8.\textcolor{red}{*} Finally, Theorem 3.9 establishes the boundedness of the genus $g$ and describes the remaining Fano $3$-folds with $g\geq 6$. 
+\subsection{Plan} We begin our study of classification by defining and giving properties of invariants associated to a Fano $3$-fold $X$, viz., Picard rank, index, genus, and degree. The \textit{genus} $g$ of $X$ is the positive integer $(-K_X)^3/2 +1$. The Picard rank $\rho$ is discussed next, it is defined as the rank of the Picard group Pic $X$. The \textit{index} of $X$ is the greatest integer $r$ such that $-K_X = rH$ for some divisor $H$, called the fundamental divisor of $X$. It turns out that the index $r$ satisfies $1 \leq r \leq 4$, we show this in Proposition 2.8. The \textit{degree} $d$ of $X$ is defined as the self-intersection number of $H$. In the case when $-K_X$ is very ample, we give an alternative description for $g$ and $d$ in Proposition 2.4 and Definition 2.9. 
+
+The classification of Fano $3$-folds with Picard rank $1$ is described in section $3$, owing to Iskovskikh and Mukai. In Theorem 3.1, we describe Fano $3$-folds with index $r=3$ and $4$. From Theorem 3.2, we see that Fano threefolds with index $r=2$ have degree $1\leq d \leq 7$, we give a description of them in Theorem 3.3 for each $d$. Through the works of Iskovskikh(\cite{Isk77}, \cite{Isk78}), we have that all Fano $3$-folds with index $r=1$ appear as hyperelliptic varieties, complete intersections or have genus $6 \leq g \leq 12$, $g\neq 11$ except one. We first give hyperelliptic Fano $3$-folds in Theorem 3.5. In Proposition $3.8$, we see that a Fano $3$-fold is a complete intersection in projective space exactly for $g=3,4$, and $5$. A Fano $3$-fold with $g=6$ is given as complete intersection in a Grassmannian, in example 3.8. Finally, Theorem 3.9 establishes the boundedness of the genus $g$ and describes the remaining Fano $3$-folds with $g\geq 6$. 
 
 While Iskovskikh's method gives the existence of prime Fano $3$-folds with genus $g \geq 6$, Mukai gave a more explicit description of such projective varieties as sections of homogeneous spaces, which we describe in Example 3.10. His original result is for more general prime Fano varieties of dimension $n\geq 3$ and index $n-2$, see \cite{Muk89}. Here we state it for $n=3$ in Theorem 3.11. Mukai's method is a vast generalization of Gushel's vector bundle method which he used to describe Fano $3$-folds with genus $6$ and $8$, see \cite{Gus6}, \cite{Gus83}, and \cite{Gus92}. we state Gushel's results in Theorems 3.12 and 3.13.
 
 In section 4, we describe Fano $3$-folds with Picard rank at least $2$ following mainly \cite{MM81} and \cite{MM83}. By a result of Mori and Mukai, the Picard rank of Fano $3$-folds is bounded above(Theorem 4.5). We will call a Fano $3$-fold primitive if it is not isomorphic to the blowing-up of another Fano $3$-fold along a smooth irreducible curve. 
-Mori's theory for extremal rays applied to primitive Fano $3$-folds shows that they have $\rho =2 $ or $3$ and they appear as conic bundles over either $\mathbb{P}^2$ or $\mathbb{P}^1 \times \mathbb{P}^1$, see Theorem 4.4. On the other hand, the Fano $3$-folds which are not primitive(imprimitive) have also been classified into remaining 75 deformation classes. 
+Mori's theory for extremal rays applied to primitive Fano $3$-folds shows that they have $\rho =2 $ or $3$ and they appear as conic bundles over either $\mathbb{P}^2$ or $\mathbb{P}^1 \times \mathbb{P}^1$, see Theorem 4.4. On the other hand, the Fano $3$-folds which are not primitive(called imprimitive) have also been classified into remaining 75 deformation classes. 
 
 \subsection{Basic Properties} We begin by stating some results for smooth projective varieties that will be necessary to arrive at the the definitions of invariants and their properties. 
 \begin{proposition}[Adjunction Formula, \cite{Hartshorne}, II.8]
@@ -192,10 +207,8 @@ so $S^3=2$.
 	 \[
 	 \dots \rightarrow H^1(X,\mathcal{O}_X) \rightarrow H^1(X,\mathcal{O}_X^*) \xrightarrow{\delta} H^2(X,\mathbb{Z}) \rightarrow H^2(X,\mathcal{O}_X)\rightarrow \dots 
 	 \]
-	 By the Kodaira vanishing theorem, $H^1(X,\mathcal{O}_X) = H^2(X,\mathcal{O}_X) =0$, so $\delta$ is an isomorphism. This shows $(i)$. Let $S \in |-K_X|$ be a smooth surface. It is a $K3$ surface by \cite{Isk77}, 1.5 and if $r \geq 2$, a del Pezzo surface by Corollary 2.7. In any case, $H^2(S,\mathbb{Z})$ is torsion-free(\textcolor{red}{cite?}). Further by Lefschetz hyperplane theorem, $H^2(X,\mathbb{Z}) \hookrightarrow H^2(S,\mathbb{Z})$. Thus by $(i)$, Pic $X$ is also torsion-free.
+	 By the Kodaira vanishing theorem, $H^1(X,\mathcal{O}_X) = H^2(X,\mathcal{O}_X) =0$, so $\delta$ is an isomorphism. This shows $(i)$. Let $S \in |-K_X|$ be a smooth surface. It is a $K3$ surface by \cite{Isk77}, 1.5 and if $r \geq 2$, a del Pezzo surface by Corollary 2.7. In any case, $H^2(S,\mathbb{Z})$ is torsion-free. Further by Lefschetz hyperplane theorem, $H^2(X,\mathbb{Z}) \hookrightarrow H^2(S,\mathbb{Z})$. Thus by $(i)$, Pic $X$ is also torsion-free.
 \end{proof}
- 
-Given a Fano $3$-fold $X$, we label it by a pair of numbers $\rho-N$ where $\rho$ is the Picard rank of $X$ and $N$ is the number in the classification found in \cite{FanoV}. A most recent classification table for Fano $3$-folds along with some of their associated invariants and information about their birational geometry, zero section description, etc. can be found on \cite{Fano}.
 
 	  
 \section{Fano Threefolds with $\rho =1$}
@@ -246,7 +259,7 @@ For the detailed proof of Theorems 3.1-3.3, see $\S\S 4-6$ in \cite{Isk77}.
 \subsection{Fano $3$-folds with $r=1$}
 In this subsection, $X$ will denote a Fano $3$-fold of index $r=1$. 
 
-For a Fano $3$-fold of index $r$, Theorem \ref{B} implies that the fundamental linear system $|H|$ is without fixed components and base points and so by Corollary 2.2 in \cite{Isk77}, it follows that deg $\phi_{|H|} =1$ or $2$. Here we study the case when deg $\phi_{|H|}=2$. 
+For a Fano $3$-fold, Theorem \ref{B} implies that the fundamental linear system $|H|$ is without fixed components and base points and so by Corollary 2.2 in \cite{Isk77}, it follows that deg $\phi_{|H|} =1$ or $2$. Here we study the case when deg $\phi_{|H|}=2$. 
 \begin{definition}
     A Fano $3$-fold $X$ of index $r=1$ is \textit{hyperelliptic} if its anticanonical map $\phi_{|-K_X|}$ is a morphism and is of degree deg $\phi_{|-K_X|} = 2$.
 \end{definition}
@@ -269,13 +282,6 @@ In \cite{Isk77}, Theorem 3.3 (b), Iskovskikh shows the existence of a Fano $3$-f
     A smooth complete irreducible $3$-fold $X$ over $\mathbb{C}$ is called a \textit{Fano $3$-fold of the principal series} if the anticanonical divisor $-K_X$ is very ample.
 \end{definition}
 All Fano $3$-folds are of the principal series with the exceptions of hyperelliptic Fano $3$-folds in Theorem 3.5, 1-11(Theorem 3.3, $vii$), and 1-5 b)(Theorem 3.12, $ii$).  From this point, we will consider our Fano $3$-folds to be of principal series and write $X = X_{2g-2} \subset \mathbb{P}^{g+1}$ for a Fano $3$-fold of the principal series in its anticanonical embedding.
-\medbreak
-A \textit{line} on $X$ is defined as an effective $1$-dimensional cycle $Z \subset X$ with $-K_X \cdot Z=1$. 
-\begin{definition}[Double Projection from a line]
-Let $Z$ be a line on $X$ and $H$ denote a hyperplane section of $X$. We define the the double projection from $Z$ as the rational map $\pi_{2Z}: X \to \mathbb{P}^{g-6}$ defined by the linear system $|H-2Z|$ on $X$.
-\end{definition}
-Shukorov showed the existence of a line on such Fano $3$-folds with Picard rank $1$ in \cite{Sokuline}. Under this assumption and using the method of double projection from a line, Iskovskikh showed that there exist Fano $3$-folds with $\rho =1$ and index $1$ for genus $g \leq 10$ and $g=12$ but not for $g=11$.
-
 For genus $g=3, 4,$ and $5$, and index $1$, we have 
 \begin{proposition}
     A Fano $3$-fold $X_{2g-2}\subset \mathbb{P}^{g+1}$ is a complete intersection only for $g=3, 4$ or $5$, and we have that 
@@ -287,6 +293,12 @@ For genus $g=3, 4,$ and $5$, and index $1$, we have
     Conversely, each smooth complete intersection of the types indicated is a Fano $3$-fold the principal series. 
 \end{proposition}
 For a proof, see Proposition 1.3 in \cite{Isk78}.
+\medbreak
+A \textit{line} on $X$ is defined as an effective $1$-dimensional cycle $Z \subset X$ with $-K_X \cdot Z=1$. 
+\begin{definition}[Double Projection from a line]
+Let $Z$ be a line on $X$ and $H$ denote a hyperplane section of $X$. We define the the double projection from $Z$ as the rational map $\pi_{2Z}: X \to \mathbb{P}^{g-6}$ defined by the linear system $|H-2Z|$ on $X$.
+\end{definition}
+Shukorov showed the existence of a line on such Fano $3$-folds with Picard rank $1$ in \cite{Sokuline}. Under this assumption and using the method of double projection from a line, Iskovskikh showed that there exist Fano $3$-folds with $\rho =1$ and index $1$ for genus $g \leq 10$ and $g=12$ but not for $g=11$.
  
 \begin{example}
         ($g=6$) Let us denote by $X$ a section of Pl\"{u}cker embedding Gr$(2,5) \subset \mathbb{P}^9$ by two hyperplanes in general position and a quadric. By adjunction formula, this is a Fano variety of index $1$, indicated on \cite{Fano} by 1-5 $a)$.
@@ -312,24 +324,26 @@ For an alternative proof of boundedness of genus for Fano $3$-folds using vector
 	    
 \subsection{Mukai and Gushel's description of Fano $3$-folds with $g\geq 6$}
 To classify Fano $n$-folds($n\geq 3$) of the principal series of genus $g \geq 6$, Mukai first showed the existence of a vector bundle $\mathcal{E}$ on $X$. Then using the linear system $|\mathcal{E}|$, we can embed $X$ into a Grassmannian variety and describe its image. We find that $X$ is a linear section of some homogeneous space. We describe these homogeneous spaces in the following examples.
-\begin{example}\begin{enumerate}\item[(i)] $g=7$. Let $V$ be a $9$-dimensional vector space with $F$ as a non degenerate symmetric bilinear form on $V$ and $S$ be the space of spinors of $F$. Here $n(g)=10$. Denote by $\Sigma_{12}^{10} \subset $Gr$(4,9)$ the set of all $4$-dimensional subspaces $W$ of $V$ with $F(W,W)=0$. Then $\Sigma_{12}^{10}$ is a smooth $10$-dimensional subvariety of Grassmannian Gr$(4,9)$ and can be embedded in $\mathbb{P}^{15}$ by the spinor coordinates. 
+\begin{example}\begin{enumerate}\item[(i)] $g=7$. Let $V$ be a $9$-dimensional vector space with $F$ as a non degenerate symmetric bilinear form on $V$ and $S$ be the space of spinors of $F$. Denote by $\Sigma_{12}^{10} \subset $Gr$(4,9)$ the set of all $4$-dimensional subspaces $W$ of $V$ with $F(W,W)=0$. Then $\Sigma_{12}^{10}$ is a smooth $10$-dimensional subvariety of Grassmannian Gr$(4,9)$ and can be embedded in $\mathbb{P}^{15}$ by the spinor coordinates. 
 
 Here $\Sigma^{10}_{12} = SO_{10}(\mathbb{C})/P$ is a homogeneous space with $P$ a maximal parabolic subgroup of $SO_{10}(\mathbb{C})$ and is unique up to isomorphism.
-\item[(ii)] $g=8$. The Grassmannian $\Sigma^8_{14}:=$ Gr$(2,6) \subset \mathbb{P}(\wedge^2 \mathbb{C}^6) = \mathbb{P}^{14}$ is a smooth Fano variety of dimension $8$ and index $8$.  Here $\Sigma^8_{14} = SL_6(\mathbb{C})/P$ is a homogeneous space with $P$ a maximal parabolic subgroup of $SL_6(\mathbb{C})$.
-      \item[(iii)] $g=9$. Let $V$ be a $6$-dimensional vector space and $F$ be a non degenrate skew-symmetric bilinear form on $V$. Here $n(g)=6$. Let us denote by $\Sigma_{16}^6$ the set of all $3$-dimensional subspaces $W$ of $V$ such that $F(W,W)=0$. Then $\Sigma_{16}^6 \subset $ Gr$(3,6)$ is a homogeneous space isomorphic to $U(3)/O(3)$ as varieties, hence is a smooth $6$-dimensional subvariety of degree $16$ in Gr$(3,6)\subset  \mathbb{P}^{19}$.
-            \item[(iv)] $g=10$. Let $V$ be a $7$-dimensional vector space and $F$ be a non degenerate skew-symmetric $4$-linear form on $V$. Here $n(g)=5$. Denote by $\Sigma_{18}^5$ the set of all $5$-dimensional subspaces $W$ of $V$ such that $F(W,W,W,W)=0$. Then $\Sigma_{18}^5 \subset $ Gr$(5,7)$ is a homogeneous space, hence a smooth $5$-dimensional subvariety of degree $18$ in Gr$(5,7) \subset \mathbb{P}^{20}$. Here $\Sigma^5_{18}$ is a homogeneous space under the action of the exceptional Lie group of type $G_2$ and is isomorphic to $G_2/P$ where $P$ is a maximal parabolic subgroup of $G_2$.
+\item[(ii)] $g=8$. The Grassmannian $\Sigma^8_{14}:=$ Gr$(2,6) \subset \mathbb{P}(\wedge^2 \mathbb{C}^6) = \mathbb{P}^{14}$ is a smooth $8$-dimensional Fano variety of index $8$.  Here $\Sigma^8_{14} = SL_6(\mathbb{C})/P$ is a homogeneous space with $P$ a maximal parabolic subgroup of $SL_6(\mathbb{C})$.
+      \item[(iii)] $g=9$. Let $V$ be a $6$-dimensional vector space and $F$ be a non degenrate skew-symmetric bilinear form on $V$. Let us denote by $\Sigma_{16}^6$ the set of all $3$-dimensional subspaces $W$ of $V$ such that $F(W,W)=0$. Then $\Sigma_{16}^6 \subset $ Gr$(3,6)$ is a homogeneous space isomorphic to $U(3)/O(3)$ as varieties, hence is a smooth $6$-dimensional subvariety of degree $16$ in Gr$(3,6)\subset  \mathbb{P}^{19}$.
+            \item[(iv)] $g=10$. Let $V$ be a $7$-dimensional vector space and $F$ be a non degenerate skew-symmetric $4$-linear form on $V$. Denote by $\Sigma_{18}^5$ the set of all $5$-dimensional subspaces $W$ of $V$ such that $F(W,W,W,W)=0$. Then $\Sigma_{18}^5 \subset $ Gr$(5,7)$ is a homogeneous space, hence a smooth $5$-dimensional subvariety of degree $18$ in Gr$(5,7) \subset \mathbb{P}^{20}$. Here $\Sigma^5_{18}$ is a homogeneous space under the action of the exceptional Lie group of type $G_2$ and is isomorphic to $G_2/P$ where $P$ is a maximal parabolic subgroup of $G_2$.
             
-            \item[(v)] $g=12$. Let $V$ be a $7$-dimensional vector space and $F_1$, $F_2$, and $F_3$ be three linearly independent skew-symmetric bilinear forms on $V$. Denote by $X$ the set of $3$-dimensional subspaces $W$ of $V$ with $F_1(W,W)=F_2(W,W)=F_3(W,W)=0$. If the subspace $F_1 \wedge V^{\vee} + F_2 \wedge V^{\vee} + F_3 \wedge V^{\vee}$ of $\wedge^3 V^{\vee}$ contains no vectors of the form $f_1 \wedge f_2 \wedge f_3 \neq 0$ for $f_1, f_2, f_3 \in V^{\vee}$ then $X$ is a smooth $3$-dimensional subvariety of degree $22$, denoted by $\Sigma_{22}^3$. Here $n(g)= 3$.
+            \item[(v)] $g=12$. Let $V$ be a $7$-dimensional vector space and $F_1$, $F_2$, and $F_3$ be three linearly independent skew-symmetric bilinear forms on $V$. Denote by $X$ the set of $3$-dimensional subspaces $W$ of $V$ with $F_1(W,W)=F_2(W,W)=F_3(W,W)=0$. If the subspace $F_1 \wedge V^{\vee} + F_2 \wedge V^{\vee} + F_3 \wedge V^{\vee}$ of $\wedge^3 V^{\vee}$ contains no vectors of the form $f_1 \wedge f_2 \wedge f_3 \neq 0$ for $f_1, f_2, f_3 \in V^{\vee}$ then $X$ is a smooth $3$-dimensional subvariety of degree $22$, denoted by $\Sigma_{22}^3$.
         \end{enumerate}
 \end{example}
+
+Let us write $n(g)$ for the dimension of the varieties in the above example for a given genus $g$. The isomorphism class of $\Sigma_{2g-2}^{n(g)}$ depends only on the vector space spanned by a multilinear form $F$ when $g\neq 12$ and by $F_1, F_2,$ and $F_3$ for $g=12$. So we denote $\Sigma_{2g-2}^{n(g)}$ by $\Sigma_g(V,M)$. For $g=8$, we take $M=0$.  
 \begin{theorem}
     Let $X$ be a prime Fano $3$-fold of index $1$ and genus $g$, $6\leq g \leq 10$ over $\mathbb{C}$. Then there exists a vector space $V$ and a space $M$ of multilinear forms on $V$ such that $X$ is isomorphic to a linear section of $\Sigma_g(V,M) \subset \mathbb{P}^{g+1}_{\mathbb{C}}$.
-    For $g=12$, then $X$ is isomorphic to some threefold from Example 3.8, (v).
+    For $g=12$, then $X$ is isomorphic to some threefold from Example 3.11, (v).
 \end{theorem}
 Mukai showed the theorem for $n$-dimensional($n\geq 3$) Fano manifolds with index $n-2$ and genus $g\geq 6$, see \cite{Muk89}.
 In particular, for $n=3$ and $7 \leq g \leq 10$, a Fano $3$-fold $X_{2g-2} \subset \mathbb{P}^{g+1}$ is obtained as a complete intersection of the homogeneous space $\Sigma_{2g-2}^{n(g)}$ and a linear subspace of codimension $n(g)-3$ in $\mathbb{P}(V) = \mathbb{P}^{g+n(g)-2}$. And by Lefschetz theorem, it follows that such $X=X_{2g-2}$ has Pic $(X) \simeq \mathbb{Z}(-K_X)$.
 For Fano $3$-folds of genus $6$ and $8$ over $\mathbb{C}$, the theorem was proved independently by Gushel. For $g=6$, we have  
-\begin{theorem}
+\begin{theorem}[Gushel, \cite{Gus6}]
     Let $X=X_{10} \subset \mathbb{P}^7$ be an anticanonically embedded Fano threefold of index $1$ and genus $6$ with $\rho(X)=1$. Then $X$ is one of the following:
     \begin{enumerate}
         \item[(i)] a section of the Grassmannian $Gr(2,5)$ embedded by Pl\"{u}cker embedding into $\mathbb{P}(\wedge^2 \mathbb{C}^5)$ by a subspace of codimension $2$ and a quadric,
@@ -338,11 +352,11 @@ For Fano $3$-folds of genus $6$ and $8$ over $\mathbb{C}$, the theorem was prove
     Threefolds of type $(i)$ and $(ii)$ are not isomorphic.
 \end{theorem}
 See \cite{Gus6} for details on the proof.
-A similar method can be applied to study Fano threefolds of genus $8$, see \cite{Gus83} and \cite{Gus92}. 
-\begin{theorem}
+A similar method can be applied to study Fano threefolds of genus $8$. 
+\begin{theorem}[Gushel, \cite{Gus83}, \cite{Gus92}]
     Let $X=X_{14} \subset \mathbb{P}^9$ be an anticanonically embedded Fano threefold of index $1$ and genus $8$ with $\rho(X)=1$. Then $X$ is a section of the Grassmannian Gr$(2,6)$ embedded by Pl\"{u}cker embedding into $\mathbb{P}(\wedge^2 \mathbb{C}^6) = \mathbb{P}^{14}$ by a subspace of codimension $5$.
 \end{theorem}
-
+\medbreak
 As a consequence, we see that the Fano $3$-folds with Picard rank $\rho =1$ appear as one of the following: 
 \begin{enumerate}
     \item[(i)] Sections of Grassmannians(1-5 a), 1-6, 1-7, 1-8, 1-9, 1-10, 1-15)
@@ -352,86 +366,85 @@ As a consequence, we see that the Fano $3$-folds with Picard rank $\rho =1$ appe
 \end{enumerate}
 
 \section{Fano Threefolds with $\rho \geq 2$}
-We begin by noting that for a Fano $3$-fold $X$, $B_2 =\rho$ where $B_2$ is the second betti number of $X$. So we use $B_2$ and $\rho$ interchangeably. 
-In this section, we consider Fano threefolds with $B_2 \geq 2$. 
+We begin by noting that for a Fano $3$-fold $X$, $B_2 =\rho$ where $B_2$ is the second betti number of $X$. We will use $\rho$ instead of $B_2$ as was used in Mori and Mukai's original work. 
+In this section, we consider Fano threefolds with $\rho \geq 2$. 
 In \cite{MM81} and \cite{MM03}, Mori and Mukai announced the classification result for such Fano threefolds: 
 	\begin{theorem}
-	There are exactly $88$ types of Fano $3$-folds with $B_2 \geq 2$ up to deformations.
+	There are exactly $88$ types of Fano $3$-folds with $\rho \geq 2$ up to deformations.
 	\end{theorem}
-In \cite{MM83}, they explained the general principle of how to classify Fano $3$-folds with $B_2 \geq 2$ and an outline of the proof for some cases. However the complete proof has not been published. See also \cite{MM85}, \S 7 for the proof of the following assertions pertinent to the classification:
-an arbitrary smooth $3$-fold in each of the $88$ deformation classes is a Fano $3$-fold with $B_2 \geq 2$, two arbitrary Fano $3$-folds in different classes are not deformation equivalent to each other.
+In \cite{MM83}, they explained the general principle of how to classify Fano $3$-folds with $\rho \geq 2$ and an outline of the proof for some cases. See also \cite{MM85}, \S 7 for the proof of the following assertions pertinent to the classification:
+an arbitrary smooth $3$-fold in each of the $88$ deformation classes is a Fano $3$-fold with $\rho \geq 2$, two arbitrary Fano $3$-folds in different classes are not deformation equivalent to each other.
 	We begin with some definitions. 
 	\begin{definition}
 		A Fano $3$-fold is \textit{imprimitive} if it is isomorphic to the blow-up of a Fano $3$-fold along a smooth irreducible curve. A Fano $3$-fold is \textit{primitive} if it is not imprimitive.
 	\end{definition}
+
 	\begin{definition}
 	    A smooth variety over a smooth surface $S$ is a conic bundle if every geometric fibre of $X \to S$ is isomorphic to a conic, i.e., a scheme of zeroes of a non zero homogeneous form of degree $2$ on $\mathbb{P}^2$.
 	\end{definition}
-    \noindent The following theorem is the first step towards the classification.
+    It is clear that prime Fano $3$-folds we saw in $\S 3$ are primitive. So in what follows, we only discuss higher Picard rank case. The following theorem is the first step towards the classification.
     \begin{theorem}
     	Let $X$ be a primitive Fano $3$-fold. Then we have 
     	\begin{enumerate}
-    		\item $B_2 \leq 3$,
-		\item if $B_2 =2$, then $X$ is a conic bundle over $\mathbb{P}^2$, and
-    		\item if $B_2 =3$, then $X$ is a conic bundle over $\mathbb{P}^1 \times \mathbb{P}^1$ and has either a divisor $D \simeq \mathbb{P}^1 \times \mathbb{P}^1$ such that $\mathcal{O}_D(D) \simeq \mathcal{O}(-1,-1)$ or another conic bundle structure over $\mathbb{P}^1 \times \mathbb{P}^1$.
+    		\item $\rho \leq 3$,
+		\item if $\rho =2$, then $X$ is a conic bundle over $\mathbb{P}^2$, and there are $9$ deformation types, 
+    		\item if $\rho =3$, then $X$ is a conic bundle over $\mathbb{P}^1 \times \mathbb{P}^1$ and has $4$ deformation types. 
     	\end{enumerate}
     \end{theorem}
     The proof is based on Mori's theory of extremal rays for Fano threefolds. See \cite{MM83}, \S8 for details.
-    For $B_2=2$, the primitive Fano $3$-folds have $9$ deformation types, \cite{MM83}, \S 5. \textcolor{olive}{For $B_2 =3$- should I list all 4 possibilities here? They are without proof or any mention of it.}
-    An imprimitive Fano $3$-fold can be obtained from successive curve-blow-ups of primitive Fano $3$-folds by using their conic bundle structure or the existence of lines on Fano $3$-folds with $B_2=2$. In the latter case, there can be several possibilities for each of the extremal rays and each possibility leads to an imprimitive Fano $3$-fold with $B_2=2$. Combining all this information we get Table 2 in \cite{MM81}.
+    \medbreak
+    An imprimitive Fano $3$-fold can be obtained from successive curve-blow-ups of primitive Fano $3$-folds by using their conic bundle structure or the existence of lines on Fano $3$-folds with $\rho=2$. In the latter case, there can be several possibilities for each of the extremal rays and each possibility leads to an imprimitive Fano $3$-fold with $\rho=2$. Combining all this information we get \cite[Table 2]{MM81}.
     
-    Since the blowing-up of a Fano $3$-fold along a non-empty smooth irreducible curve $C$ increases $B_2$ by $1$(\cite{MM85}, 2.1), we obtain imprimitive Fano $3$-folds with $B_2 \geq 3$. See Propositions 7-9 in \cite{MM81} for the strong necessary conditions that $C$ must satisfy for the blow-up to be a Fano $3$-fold. These successive curve blow-ups result in Tables 3-5, \cite{MM81}. The following theorem completes the Fano $3$-folds classification for $B_2 \geq 2$
+    Since the blowing-up of a Fano $3$-fold along a non-empty smooth irreducible curve $C$ increases $\rho$ by $1$(\cite{MM85}, 2.1), we obtain imprimitive Fano $3$-folds with $\rho \geq 3$. See Propositions 7-9 in \cite{MM81} for the strong necessary conditions that $C$ must satisfy for the blow-up to be a Fano $3$-fold. These successive curve blow-ups result in \cite[Tables 3-5]{MM81}.
+    \medbreak
+    The following theorem summarizes the classification for imprimitive Fano $3$-folds. 
+    
     \begin{theorem}
-        A Fano $3$-fold with $B_2 \geq 6$ is isomorphic to $\mathbb{P}^1 \times S_{11-B_2}$, where $S_d$ is a del Pezzo surface of degree $d$. In particular, every Fano $3$-fold has $B_2 \leq 10$.
+        Let $X$ be an imprimitive Fano $3$-fold. Then we have
+        \begin{enumerate}
+            \item[(i)] $2\leq \rho \leq 10$.
+            \item[(ii)] if $\rho =2$, there are 27 deformation types.
+            \item[(iii)] if $\rho=3$, there are $27$ deformation types.
+            \item[(iv)] if $\rho=4$, there are $13$ deformation types.
+            \item[(v)] if $\rho=5$, there are $3$ deformation types.
+            \item[(vi)] if $\rho \geq 6$, then $X$ is isomorphic to $\mathbb{P}^1 \times S$ where $S$ is a del Pezzo surface of degree $11-\rho$. There is one deformation class for each $\rho$ in this case. 
+        \end{enumerate}
     \end{theorem}
     
-\section{Potential Research}
+\section{Automorphism group of Fano threefolds}
+    For a Fano variety $X$, a natural question to ask is what the group of its biregular automorphisms Aut$(X)$ looks like. 
+    In dimension $1$, the only Fano variety is $\mathbb{P}^1$ and it has automorphism group PGL$(2,\mathbb{C})$ (\cite{Hartshorne}, II.7.1.1). In dimension $2$, the detailed structure of automorphism groups of del Pezzo surfaces is also known, see \cite{Del}. Such a description of automorphism groups is far from being complete in the case of dimension $3$. 
+    
+     A theorem of Kuznetsov, Prokhorov, and Shramov states that for a prime Fano $3$-fold $X$, Aut$(X)$ is finite unless it is $\mathbb{P}^3$, a smooth quadric $Q$ in $\mathbb{P}^4$, Fano $3$-fold $X_5$, or has genus $12$ in which case it is one of the three threefolds-- $X^{\text{MU}}_{22}$, $X^a_{22}$, $X^{m}_{22}$. See \cite{Hil} for a description of these threefolds and the proof of the theorem. In \cite{Cubic}, the authors have classified groups which faithfully act on smooth cubic threefolds over $\mathbb{C}$.
+    
+    More recently, automorphism groups of Fano threefolds of higher Picard rank have also been studied. In \cite{Inf} Theorem 1.2, the authors have shown that the automorphism group Aut$(X)$ is finite unless $X$ is contained in some 62  deformation families. The connected component of the identity Aut$^0(X)$ in Aut$(X)$ is also described for all Fano $3$-folds $X$, see the classification table in \cite{Inf} or \cite{Fano}.
+    
 
-\begin{thebibliography}{19}
-\bibitem{Isk77}
-V.A. Iskovskih, 
-\newblock {\em Fano 3-folds I},
-\newblock Izv. Akad. Nauk SSSR Ser. Mat.  \textbf{41} (1977), 516-562; English transl. in Math. USSR Izv. \textbf{11} No. 3 (1977).
+\begin{thebibliography}{26}
+\bibitem{Hil}
+A. G. Kuznetsov, Yu. G. Prokhorov and C. A. Shramov,
+\newblock{\em Hilbert schemes of lines and conics and automorphism groups of Fano threefolds},
+\newblock Japan. J. Math. \textbf{13}, No. 1 (2018), 109-185.
 
-\bibitem{Isk78}
-V. A. Iskovskih, 
-\newblock {\em Fano 3-folds II}, 
-\newblock Izv. Akad. Nauk SSSR Ser. Mat.
-\textbf{42} (1978), 506-549; English transl. in Math. USSR Izv. \textbf{12} No. 3 (1978), 469-506.
+\bibitem{3264}
+D. Eisenbud, J. Harris,
+\newblock{\em 3264 and All That: A Second Course in Algebraic Geometry}
+\newblock Cambridge: Cambridge University Press, (2016).
 
-\bibitem{Sokudivisor}
-V. V. \v{S}okurov, 
-\newblock{\em The smoothness of the general anticanonical divisor on a Fano variety},
-\newblock Izv. Akad. Nauk SSSR Ser. Mat. \textbf{43} (1979), 430-441; English transl. in Math. USSR Izv. \textbf{14} No. 2 (1980).
+\bibitem{Hove}
+De Biase, L., Fatighenti, E., Tanturri, F.
+\newblock{ \em   Fano 3-folds from homogeneous vector bundles over Grassmannians.}
+\newblock Rev Mat Complut (2021).
 
-\bibitem{Sokuline}
-V. V, \v{S}okurov, 
-\newblock {\em The Existence of lines on Fano threefolds},
-\newblock English transl. in Math. USSR Izv. \textbf{15} (1980), 173-209.
+\bibitem{Del}
+I. V. Dolgachev and V. A. Iskovskikh, 
+\newblock{\em Finite subgroups of the plane Cremona group},
+\newblock Algebra. arithmetic, and geometry, vol. I, In honor of Yu. I. Manin, Progr. Math., vol. 269, Birkh\"{a}user Boston, Inc., Boston, MA (2009), 443-548.
 
-\bibitem{Hartshorne}
-R. Hartshorne.
-\newblock {\em Algebraic Geometry},
-\newblock Graduate Texts in Mathematics, No. 52, Springer-Verlag, New York-Heidelberg, 1977.
-	
-\bibitem{FanoV}
-V. A. Iskovskih, Yu. G. Prokhorov, Fano varieties,
-\newblock{ \em Algebraic Geometry V},
-\newblock Encyclopaedia Math. Sci., vol. 47, Springer, Berlin 1999.
-
-\bibitem{Muk89}
-S. Mukai,
-\newblock{\em Biregular classification of Fano 3-folds and Fano manifolds of coindex 3},
-\newblock Proc. Nat. Acad. Sci. U.S.A., \textbf{86}, No. 9 (1989), 3000-3002.
-
-\bibitem{Muk92}
-S. Mukai, (1992). 
-\newblock{\em Fano 3-folds},
-\newblock In G. Ellingsrud, C. Peskine, G. Sacchiero, \& S. Stromme (Eds.), Complex Projective Geometry: Selected Papers (London Mathematical Society Lecture Note Series, pp. 255-263). Cambridge: Cambridge University Press. 
-
-\bibitem{Fano}
-Pieter Belmans,
-\newblock{\em https://www.fanography.info/}
+\bibitem{Cubic}
+Li Wei, Xun Yu,
+\newblock{\em Automorphism groups of smooth cubic threefolds},
+\newblock J. Math. Soc. Japan \textbf{72}, No. 4 (2020), 1327-1343.
 
 \bibitem{Gus6}
 N. P. Gushel,
@@ -448,10 +461,19 @@ N. P. Gushel,
 \newblock{\em Fano $3$-folds of genus $8$},
 \newblock Algebra i Analiz \textbf{4} (1992), 120-134 (Russian); English transl. in St. Petersbg. Math. J. \textbf{4} (1993), 115-129. 
 
-\bibitem{Hove}
-De Biase, L., Fatighenti, E., Tanturri, F.
-\newblock{ \em   Fano 3-folds from homogeneous vector bundles over Grassmannians.}
-\newblock Rev Mat Complut (2021).
+\bibitem{Fano}
+Pieter Belmans,
+\newblock{\em \url{https://www.fanography.info/}}
+
+\bibitem{Hartshorne}
+R. Hartshorne.
+\newblock {\em Algebraic Geometry},
+\newblock Graduate Texts in Mathematics, No. 52, Springer-Verlag, New York-Heidelberg, 1977.
+
+\bibitem{Laz}
+R. Lazarsfeld,
+\newblock{\em Positivity in Algebraic Geometry I},
+\newblock Classical Setting: Line Bundles and Line Series. Springer-Verlag, Berlin, (2004). 
 
 \bibitem{MM81}
 S. Mori and S. Mukai,
@@ -473,18 +495,51 @@ S. Mori and S. Mukai,
 \newblock{\em Classification of Fano $3$-Folds with $b_2 \geq 2$, I}.
 \newblock Algebraic and Topological Theories. Papers from the symposium dedicated to the memory of Dr. Takehiko Miyata held in Kinosaki, (1985), 496-545.
 
+\bibitem{Muk89}
+S. Mukai,
+\newblock{\em Biregular classification of Fano 3-folds and Fano manifolds of coindex 3},
+\newblock Proc. Nat. Acad. Sci. U.S.A., \textbf{86}, No. 9 (1989), 3000-3002.
+
+\bibitem{Muk92}
+S. Mukai, (1992). 
+\newblock{\em Fano 3-folds},
+\newblock In G. Ellingsrud, C. Peskine, G. Sacchiero, \& S. Stromme (Eds.), Complex Projective Geometry: Selected Papers (London Mathematical Society Lecture Note Series, pp. 255-263). Cambridge: Cambridge University Press. 
+
+\bibitem{Isk77}
+V.A. Iskovskih, 
+\newblock {\em Fano 3-folds I},
+\newblock Izv. Akad. Nauk SSSR Ser. Mat.  \textbf{41} (1977), 516-562; English transl. in Math. USSR Izv. \textbf{11} No. 3 (1977).
+
+\bibitem{Isk78}
+V. A. Iskovskih, 
+\newblock {\em Fano 3-folds II}, 
+\newblock Izv. Akad. Nauk SSSR Ser. Mat.
+\textbf{42} (1978), 506-549; English transl. in Math. USSR Izv. \textbf{12} No. 3 (1978), 469-506.
+
+\bibitem{FanoV}
+V. A. Iskovskih, Yu. G. Prokhorov, Fano varieties,
+\newblock{ \em Algebraic Geometry V},
+\newblock Encyclopaedia Math. Sci., vol. 47, Springer, Berlin 1999.
+
+\bibitem{Inf}
+V. V. Przyjalkowski and I. A. Cheltsov and K. A. Shramov,
+\newblock{\em Fano threefolds with infinite automorphism groups}, 
+\newblock Izvestiya: Mathematics \textbf{83}, No. 4 (2019), 860-907.
+
+\bibitem{Sokudivisor}
+V. V. \v{S}okurov, 
+\newblock{\em The smoothness of the general anticanonical divisor on a Fano variety},
+\newblock Izv. Akad. Nauk SSSR Ser. Mat. \textbf{43} (1979), 430-441; English transl. in Math. USSR Izv. \textbf{14} No. 2 (1980).
+
+\bibitem{Sokuline}
+V. V, \v{S}okurov, 
+\newblock {\em The Existence of lines on Fano threefolds},
+\newblock English transl. in Math. USSR Izv. \textbf{15} (1980), 173-209.
+
 \bibitem{Manin}
-Yu. I. Manin
+Yu. I. Manin,
 \newblock{\em Cubic Forms- Algebra, Geometry, Arithmetic}.
 \newblock 2nd Edition, (1986). 
-
-\bibitem{Laz}
-R. Lazarsfeld,
-\newblock{\em Positivity in Algebraic Geometry I},
-\newblock Classical Setting: Line Bundles and Line Series. Springer-Verlag, Berlin, (2004). 
-
-
-
 
 \end{thebibliography}
 \end{document}
